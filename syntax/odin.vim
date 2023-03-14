@@ -44,7 +44,7 @@ syntax match odinFixMe "FIXME"
 syntax match odinNoCheckin "NOCHECKIN"
 syntax match odinHack "HACK"
 
-syntax keyword odinDataType string cstring bool b8 b16 b32 b64 rune any rawptr f16 f32 f64 f16le f16be f32le f32be f64le f64be u8 u16 u32 u64 u128 u16le u32le u64le u128le u16be u32be u64be u128be uint uintptr i8 i16 i32 i64 i128 i16le i32le i64le i128le i16be i32be i64be i128be int complex complex32 complex64 complex128 quaternion quaternion64 quaternion128 quaternion256 matrix typeid
+syntax keyword odinDataType string cstring bool b8 b16 b32 b64 rune any rawptr f16 f32 f64 f16le f16be f32le f32be f64le f64be u8 u16 u32 u64 u128 u16le u32le u64le u128le u16be u32be u64be u128be uint uintptr i8 i16 i32 i64 i128 i16le i32le i64le i128le i16be i32be i64be i128be int complex complex32 complex64 complex128 quaternion quaternion64 quaternion128 quaternion256 matrix typeid long ulong longlong ulonglong char uchar short ushort size_t ssize_t float double
 syntax keyword odinBool true false
 syntax keyword odinNull nil
 syntax keyword odinDynamic dynamic
@@ -72,6 +72,7 @@ syntax match odinFunctionCall "\v\w+\s*(\()@="
 
 syntax match odinTagNote "@\<\w\+\>" display
 
+syntax match odinTypeName "\v<[A-Z][A-Za-z0-9_]*>" display
 syntax match odinConstant "\v<[A-Z0-9,_]+>" display
 syntax match odinRange "\.\." display
 syntax match odinHalfRange "\.\.\<" display
@@ -150,11 +151,11 @@ highlight link odinString String
 highlight link odinRawString String
 highlight link odinChar String
 
-highlight link odinStruct Structure
-highlight link odinEnum Structure
-highlight link odinUnion Structure
-highlight link odinBitField Structure
-highlight link odinBitSet Structure
+highlight link odinStruct Keyword
+highlight link odinEnum Keyword
+highlight link odinUnion Keyword
+highlight link odinBitField Type
+highlight link odinBitSet Type
 
 " :FunctionHighlighting
 highlight link odinFunctionDecl Function
@@ -183,6 +184,7 @@ highlight link odinTagNote Identifier
 highlight link odinDataType Type
 highlight link odinBool Boolean
 highlight link odinConstant Constant
+highlight link odinTypeName Type
 highlight link odinNull Type
 highlight link odinInteger Number
 highlight link odinFloat Float
