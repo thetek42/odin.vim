@@ -99,6 +99,9 @@ syntax match odinCommentNote "@\<\w\+\>" contained display
 syntax region odinLineComment start=/\/\// end=/$/  contains=odinCommentNote, odinTodo, odinNote, odinXXX, odinFixMe, odinNoCheckin, odinHack
 syntax region odinBlockComment start=/\v\/\*/ end=/\v\*\// contains=odinBlockComment, odinCommentNote, odinTodo, odinNote, odinXXX, odinFixMe, odinNoCheckin, odinHack
 
+syntax region odinAttribute start="@(" end=")" contains=odinAttributeInside,odinString
+syntax match odinAttributeInside "[A-Za-z0-9_]\+" contained
+
 highlight link odinUsing Keyword
 highlight link odinTransmute Keyword
 highlight link odinCast Keyword
@@ -192,5 +195,7 @@ highlight link odinHex Number
 highlight link odinOct Number
 highlight link odinBin Number
 highlight link odinDoz Number
+
+highlight link odinAttributeInside StorageClass
 
 let b:current_syntax = "odin"
