@@ -80,6 +80,7 @@ syntax match odinTernaryQMark "?" display
 syntax match odinDeclaration "\:\:\?" display
 syntax match odinDeclAssign ":=" display
 syntax match odinReturnOp "->" display
+syntax match odinAssign "=" display
 
 syntax match odinInteger "\-\?\<\d\+\>" display
 syntax match odinFloat "\-\?\<[0-9][0-9_]*\%(\.[0-9][0-9_]*\)\%([eE][+-]\=[0-9_]\+\)\=" display
