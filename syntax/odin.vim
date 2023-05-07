@@ -72,10 +72,12 @@ syntax match odinFunctionCall "\v\w+\s*(\()@="
 
 syntax match odinTagNote "@\<\w\+\>" display
 
+syntax match odinDelimiter "[.,;()[\]{}]" display
+
 syntax match odinTypeName "\v<[A-Z][A-Za-z0-9_]*>" display
 syntax match odinConstant "\v<[A-Z0-9,_]+>" display
 syntax match odinRange "\.\." display
-syntax match odinHalfRange "\.\.\<" display
+syntax match odinHalfRange "\V\.\.<" display
 syntax match odinTernaryQMark "?" display
 syntax match odinDeclaration "\:\:\?" display
 syntax match odinDeclAssign ":=" display
@@ -135,6 +137,8 @@ highlight link odinExport Keyword
 highlight link odinForeign Keyword
 highlight link odinNoinit Keyword
 highlight link odinDo Keyword
+
+highlight link odinDelimiter Delimiter
 
 highlight link odinDefer Operator
 highlight link odinDynamic Operator
